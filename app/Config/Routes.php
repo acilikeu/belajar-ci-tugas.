@@ -37,3 +37,7 @@ $routes->get('get-cost', 'TransaksiController::getCost', ['filter' => 'auth']);
 $routes->get('faq', 'home::faq', ['filter' => 'auth']);
 $routes->get('profile', 'home::profile', ['filter' => 'auth']);
 $routes->get('contact', 'home::contact', ['filter' => 'auth']);
+
+$routes->group('api', function ($routes) {
+    $routes->post('monthly', 'ApiController::monthly');
+});
